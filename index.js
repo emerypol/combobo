@@ -397,11 +397,14 @@ module.exports = class Combobo {
     // show pseudo focus styles
     this.pseudoFocus(groupChange);
     // Dectecting if element is inView and scroll to it.
-    this.currentOpts.forEach((opt) => {
-      if (opt.classList.contains(this.config.activeClass) && !inView(this.list, opt)) {
-        scrollToElement(opt);
-      }
-    });
+
+    if (this.config.scrollToElement) {
+      this.currentOpts.forEach((opt) => {
+        if (opt.classList.contains(this.config.activeClass) && !inView(this.list, opt)) {
+          scrollToElement(opt);
+        }
+      });
+    }
 
     return this;
   }
