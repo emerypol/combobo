@@ -1,5 +1,8 @@
 # Combobo
 
+FORK of https://github.com/dequelabs/combobo
+ - used to disable `scrollToElement` in `goTo` method by setting `config.scrollToElement` as default false
+
 [![CircleCI](https://circleci.com/gh/schne324/combobo.svg?style=svg)](https://circleci.com/gh/schne324/combobo)
 
 Accessible combobox module
@@ -61,6 +64,8 @@ const combobo = new Combobo();
 * `noResultsText` (_String_): Sets text for when there are no matches
 * `selectionValue` (_Function_): A function that should return what the desired value of the input should be upon selection (this is especially useful for multiselect in that you can configure custom input values like `{3 Items Selected}`). An array of the selected options is passed as the one argument to the function.
 * `optionValue` (_Function|String_): A function that should return the desired markup of each option in the list (this allows for custom display of each option based on what is currently typed in the field) OR a string class that is to be added to the span that will be wrapped around the matched text in each option.
+* `scrollToElement` (_Boolean_): goTo function should scroll or not to the selected element
+  * Defaults to `false`
 * `announcement` (_Object_): An object containing the following properties:
   * `count` (_Function_): Announcement of currently selected items in list. The function accepts 1 argument which is the number of options selected.
     * Defaults to `function (n) { return n + ' options available'; }`
