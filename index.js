@@ -219,13 +219,17 @@ module.exports = class Combobo {
       }
     }]);
 
-    // ignore tab, enter, escape and shift
-    const ignores = [9, 13, 27, 16];
+    // ignore enter, escape and shift
+    const ignores = [13, 27, 16];
     // filter keyup listener
     keyvent.up(this.input, (e) => {
       const filter = this.config.filter;
       const cachedVal = this.cachedInputValue;
       if (ignores.indexOf(e.which) > -1 || !filter) { return; }
+      // if tab
+      if(e.which === 9) {
+        this.closeList(false, false)
+      }
 
       // Handles if there is a fresh selection
       if (this.freshSelection) {
