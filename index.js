@@ -203,7 +203,7 @@ module.exports = class Combobo {
         }
       }
     }, {
-      keys: ['escape'],
+      keys: ['escape', 'tab'],
       callback: (e) => {
         if (this.isOpen) {
           e.stopPropagation();
