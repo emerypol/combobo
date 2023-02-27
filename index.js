@@ -202,7 +202,7 @@ module.exports = class Combobo {
           this.select();
         }
       }
-    }, {
+    },/* {
       keys: ['escape', 'tab'],
       callback: (e) => {
         if (this.isOpen) {
@@ -210,7 +210,7 @@ module.exports = class Combobo {
           this.closeList(true, true);
         }
       }
-    }, {
+    },*/ {
       keys: ['backspace'],
       callback: () => {
         if (this.selected.length >= 2) {
