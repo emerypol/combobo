@@ -202,15 +202,15 @@ module.exports = class Combobo {
           this.select();
         }
       }
-    },/* {
-      keys: ['escape', 'tab'],
+    }, {
+      keys: ['escape'],
       callback: (e) => {
         if (this.isOpen) {
           e.stopPropagation();
           this.closeList(true, true);
         }
       }
-    },*/ {
+    }, {
       keys: ['backspace'],
       callback: () => {
         if (this.selected.length >= 2) {
